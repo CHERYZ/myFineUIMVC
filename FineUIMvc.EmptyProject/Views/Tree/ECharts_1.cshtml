@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "ECharts示例1";
+    var F = Html.F();
+}
+
+@section body{
+    @(F.Panel().ID("Panel1").Title("当前生产销售情况").IsViewPort(true).ShowBorder(true).Margin(10).ShowHeader(false).EnableIFrame(true).IFrameUrl(Url.Content("~/Tree/echarts1_IFrame"))
+        .Toolbars(
+            F.Toolbar().ID("Toolbar2")
+                .Items(
+                    F.RadioButtonList().ID("rblChartType").Label("选择图表类型").Width(280).RegionPosition(Position.Center)
+                        .Items(
+                            F.RadioItem().Text("销售").Value("sales").Selected(true),
+                            F.RadioItem().Text("产量").Value("output")
+                        ).Listener("change", "onChartTypeChange")
+                )
+        )
+        
+    )    
+}
+
+@section script{
+    <script>
+        function onChartTypeChange(event) {
+            var chartType = this.getValue();
+
+            console.log(chartType);
+
+            var newUrl = F.baseUrl + 'Tree/echarts1_IFrame?type=' + encodeURIComponent(chartType);
+
+            F.ui.Panel1.setIFrameUrl(newUrl);
+        }
+    </script>    
+}
+

@@ -136,6 +136,7 @@
     <Content Include="res\images\logo\logo3_old.gif" />
     <Content Include="res\images\logo\logo_old.gif" />
     <Content Include="res\images\my_face_80.jpg" />
+    <Content Include="res\js\echarts.js" />
     <Content Include="res\languages\zh_UEY.js" />
     <Content Include="res\themes\bootstrap_pure\theme.css" />
     <Content Include="res\themes\custom_default\theme.css" />
@@ -184,7 +185,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="res\js\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -204,6 +204,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Tree\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Tree\ECharts_1.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Tree\echarts1_IFrame.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Tree\ECharts_2.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

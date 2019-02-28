@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "ECharts_2";
+    var F = Html.F();
+}
+
+@section body{
+    @(F.Panel().IsViewPort(true).ID("Panel1").Title("教师访问统计").BodyPadding(10).ShowBorder(true).ShowHeader(true).Layout(LayoutType.VBox).EnableIFrame(true).IFrameUrl(Url.Content("~/Tree/echarts1_IFrame"))
+        .Toolbars(
+            F.Toolbar().ID("Toolbar1")
+                .Items(
+                        F.DatePicker().Required(true).Label("日期").EmptyText("限制范围的日期").ID("DatePicker1").ShowRedStar(true).MinDate(DateTime.Now).MaxDate(DateTime.Now.AddDays(10))    
+                )
+        //F.SimpleForm().IsFluid(true).ID("SimpleForm1").BodyPadding(10).Title("简单表单")
+
+        )
+
+    )    
+
+}
+
+
