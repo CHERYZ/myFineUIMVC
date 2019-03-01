@@ -137,6 +137,7 @@
     <Content Include="res\images\logo\logo_old.gif" />
     <Content Include="res\images\my_face_80.jpg" />
     <Content Include="res\js\echarts.js" />
+    <Content Include="res\js\grid.js" />
     <Content Include="res\languages\zh_UEY.js" />
     <Content Include="res\themes\bootstrap_pure\theme.css" />
     <Content Include="res\themes\custom_default\theme.css" />
@@ -213,6 +214,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Tree\ECharts_2.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Tree\ECharts2_IFrame.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Tree\ECharts_3.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "ECharts_3";
+    var F = Html.F();
+}
+
+@section body{
+    @(F.Panel().ID("panelMain").Layout(LayoutType.HBox).AutoScroll(true).ShowBorder(true).ShowHeader(true).Title("面板").BoxConfigChildMargin("0 5 0 0").BodyPadding(10).IsViewPort(true)
+        .Items(
+            F.Panel().ID("panelLeft").Title("ECharts").Width(600).BodyPadding(10).ShowBorder(true).ShowHeader(false).EnableFrame(true).IFrameUrl("~/Tree/echarts3_IFrame"),
+
+            F.Panel().ID("panelRight").Title("表格数据").BoxFlex(1).MinWidth(600).BodyPadding(10).Margin(0).ShowBorder(true).ShowHeader(false)
+                .Toolbars(
+                    F.Toolbar().ID("Toolbar1")
+                        .Items(
+                            F.DatePicker().Required(true).Label("日期").EmptyText("限制范围日期").ID("DatePicker1").ShowRedStar(true).MaxDate(DateTime.Now.AddDays(10)),
+                           F.Button().ID("btnSubmit").Text("提交日期")
+                        )
+                )
+                .Items(
+                    F.Grid().ID("Grid1").IsFluid(true).Title("表格").ShowHeader(true).ShowBorder(true).DataIDField("ID").DataTextField("Name").ShowSelectedCell(true)
+                        .Columns(
+                            F.RowNumberField(),
+                            F.RenderField().HeaderText("所属单位").DataField("Unit").BoxFlex(1).TextAlign(TextAlign.Center),
+                            F.RenderField().HeaderText("姓名").DataField("Name").Width(100),
+                            F.RenderField().HeaderText("操作次数").DataField("Count").Width(100)
+                     )
+                 )   
+    
+         )
+    )
+}
+
+@section script{
+    <script src="~/res/js/grid.js"></script>
+}
+
